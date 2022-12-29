@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import Button from "react-bootstrap/Button";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const Update = () => {
+  const navigate = useNavigate();
   const task = useLoaderData();
 
   const [singleTask, setSingleTask] = useState(task);
@@ -21,6 +22,7 @@ const Update = () => {
       .then((data) => {
         if (data.modifiedCount > 0) {
           toast.success("Task updated");
+          navigate("/my-task");
           console.log(data);
         }
       });
