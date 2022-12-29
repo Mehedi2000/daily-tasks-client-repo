@@ -36,12 +36,14 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "/completed-task",
+        path: "/completed-task/:id",
         element: (
           <PrivateRoute>
             <CompletedTask></CompletedTask>
           </PrivateRoute>
         ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:8000/completedTask/${params.id}`),
       },
       {
         path: "/login",

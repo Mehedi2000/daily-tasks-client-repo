@@ -35,9 +35,12 @@ const Update = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center fw-bold">Please Update : {task.task}</h2>
+      <h2 className="text-center fw-bold">
+        Please Update : <span className="text-primary">{task.task}</span>
+      </h2>
       <form className="mt-5 text-center" onSubmit={handleUpdateTask}>
         <input
+          className="mb-2 py-2 px-3 rounded-2"
           onChange={handleInputChange}
           defaultValue={task.task}
           type="text"
@@ -50,7 +53,6 @@ const Update = () => {
         <Button className="mt-3" type="submit" variant="success">
           Update Task
         </Button>
-        {/* <button type="submit">Update User</button> */}
       </form>
     </div>
   );

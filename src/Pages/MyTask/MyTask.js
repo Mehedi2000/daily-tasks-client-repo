@@ -43,9 +43,13 @@ const MyTask = () => {
         }
       });
   };
+
+  // if(isLoading){
+  //   return
+  // }
   return (
     <div className="container mt-5">
-      <h2 className="fw-bold text-center mb-5">All Task Are Here !</h2>
+      <h2 className="fw-bold text-center mb-5">My Task Are Here !</h2>
       {tasks.map((single) => (
         <div className="d-flex mb-3 gap-2 justify-content-center">
           <div className="bg-secondary rounded-2">
@@ -64,7 +68,7 @@ const MyTask = () => {
               Delete
             </Button>
           </Link>
-          <Link>
+          <Link to={`/completed-task/${single._id}`}>
             <Button variant="outline-success">Complete</Button>
           </Link>
         </div>
